@@ -4,10 +4,9 @@
 
 ## 安裝依賴
 
-- Edge 瀏覽器
-
 ```shell
 pip install msspeech pydub
+sudo apt install ffmpeg
 ```
 
 ## 使用方式
