@@ -25,7 +25,7 @@ python text_to_sound.py <input.txt> <output.mp3>
 - 顯示可用聲音
 
 ```shell
-python text_to_sound.py -p <zh-CN|zh-TW|en-US...>
+python text_to_sound.py -p [zh-CN|zh-TW|en-US...]
 ```
 
 ## 修改配置
