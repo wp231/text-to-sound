@@ -1,46 +1,42 @@
 # TextToSound
 
-借助 Edge 的微軟文字轉語音，實現超長文本轉換
+借助微軟語音服務，將文字轉換為語音
 
 ## 安裝依賴
 
-- Edge 瀏覽器
+- 安裝 ffmpeg 並將其添加到環境變量中
 
-- ffmpeg 命令
-
-- msspeech
-
-```shell
-pip install msspeech
-```
+- 安裝 Python 依賴
+  ```shell
+  pipenv install
+  ```
 
 ## 使用方式
 
-- 輸入 txt 輸出生成音頻
+- 語音轉換
+  ```shell
+  python main.py -i input.txt -o output.mp3
+  ```
 
-```shell
-python text_to_sound.py <input.txt> <output.mp3>
-```
+- 設定請求語音服務的並發數量
+  ```shell
+  python main.py -i input.txt -o output.mp3 -c 10
+  ```
 
-- 顯示可用聲音
-
-```shell
-python text_to_sound.py -p [zh-CN|zh-TW|en-US...]
-```
+- 顯示所有可用的語音
+  ```shell
+  python main.py -l [zh-CN]
+  ```
 
 ## 修改配置
 
-```py
-# 設定聲音樣式
-VOICE_NAME = "zh-CN-YunxiNeural"
-# 設定聲音語速
-VOICE_RATE = 1.0
-# 設定聲音音調
-VOICE_PITCH = 0
-# 設定聲音音量
-VOICE_VOLUME = 1.0
-# 緩存資料夾名稱
-TMP_DIR_NAME = "text-to-sound_voice-tmp"
-# 無法直接轉換時，分割檔案的字數
-SPLIT_FILE_TEXT_SIZE = 19000
+透過修改 `config.json` 文件，可以修改語音的參數
+
+```json
+{
+    "voice_name": "zh-CN-YunxiNeural",
+    "voice_pitch": 0,
+    "voice_volume": 1.0,
+    "voice_rate": 1
+}
 ```
