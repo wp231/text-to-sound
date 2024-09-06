@@ -124,15 +124,14 @@ if __name__ == "__main__":
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("-i", "--input", type=str, metavar="FILENAME",
                        help="Input txt file name (e.g., a.txt)")
-    group.add_argument("-l", "--list", type=str, metavar="LOCALE", nargs='?', const='all',
-                       help="Show all available voice list or the voice list of the specified locale")
-
     parser.add_argument("-o", "--output", type=str, metavar="FILENAME",
                         help="Output voice file name (e.g., a.mp3). Default is 'voice/<Input_file_name>.mp3'")
-    parser.add_argument("-c", "--concurrencies", type=int, metavar="NUMS",
-                        help="Number of threads to use. Default is 5 if not specified.")
     parser.add_argument("-m", "--merge", action="store_true",
                         help="Merge all output files into one file")
+    parser.add_argument("-c", "--concurrencies", type=int, metavar="NUMS",
+                        help="Number of threads to use. Default is 5 if not specified.")
+    group.add_argument("-l", "--list", type=str, metavar="LOCALE", nargs='?', const='all',
+                       help="Show all available voice list or the voice list of the specified locale")
 
     args = parser.parse_args()
 
