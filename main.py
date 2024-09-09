@@ -51,7 +51,7 @@ def generate_voice() -> None:
         output_file_name = f"{file_name}_{count}.{file_extension}"
 
         speech.generate(text, output_file_name)
-        # output_filename_queue.put(output_file_name)
+        output_filename_queue.put(output_file_name)
 
 
 def multi_threading_generate_voice(thread_count: int) -> None:
