@@ -176,7 +176,7 @@ if __name__ == "__main__":
     else:
         thread_count = DEFAULT_THREADS
 
-    text_queue = TextQueue(input_file, 60)
+    text_queue = TextQueue(input_file)
 
     queue_len = text_queue.get_length()
     if thread_count > queue_len:
